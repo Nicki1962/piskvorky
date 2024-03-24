@@ -15,3 +15,22 @@ p {
     color: #ffffff;
     font-family: Verdana;
 }
+.button1 {
+    text-align: center;
+    font-family: Verdana;
+    border: none;
+    font-size: 20px;
+    padding: 10px 5px;
+    background-color: #1fcca4;
+    text-decoration: none;
+}
+
+.button2 {
+    text-align: center;
+    font-family: Verdana;
+    border: none;
+    font-size: 20px;
+    padding: 10px 5px;
+    background-color: #0197f6;
+    text-decoration: none;
+}
