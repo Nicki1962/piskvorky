@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #ffffff;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(#615dad, #ffc8da);
+}
