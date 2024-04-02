@@ -40,7 +40,7 @@ body {
     justify-content: space-between;
   }
   
-  .menu__who {
+  .menu {
     display: flex;
     align-items: center;
     font-weight: 600;
@@ -48,15 +48,14 @@ body {
     gap: 5px;
   }
   
-  .menu__buttons {
+  .buttons {
     display: flex;
     align-items: center;
     gap: 5px;
     margin-bottom: 10px;
   }
   
-  .button_home,
-  .button_restart {
+  .buttons__home {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,20 +63,29 @@ body {
     width: 35px;
     cursor: pointer;
     text-decoration: none;
-    background-color: #1fcca4;
-    border-radius: 4%;
+    background-color: #1f7ecc;
+    border-radius: 4px;
+  }
+
+
+  .buttons__restart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #1fcc4d;
+    border-radius: 4px;
   }
   
-  .button_home:hover {
-    background-color: #1cbb96;
+  .buttons__home:hover {
+    background-color: #70a9d9;
   }
   
-  .button_restart {
-    background-color: #0197f6;
-  }
-  
-  .button_restart:hover {
-    background-color: #0090e9;
+  .buttons__restart:hover {
+    background-color: #84dc9c;
   }
   
   .container__grid {
