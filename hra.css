@@ -2,13 +2,103 @@
 
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    color: #ffffff;
     height: 100vh;
+  }
+  
+.backround {
+    background-image: linear-gradient(to bottom, #615dad, #ffc8da);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .container {
     max-width: 80vmin;
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(#615dad, #ffc8da);
-}
+    width: 100%;
+    height: 100%;
+    color: white;
+  }
+  
+  .container__h1 {
+    font-family: Lobster;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 8px;
+  }
+  
+  .container__menu {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .menu__who {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin: 10px 0;
+    gap: 5px;
+  }
+  
+  .menu__buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .button_home,
+  .button_restart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #1fcca4;
+    border-radius: 4%;
+  }
+  
+  .button_home:hover {
+    background-color: #1cbb96;
+  }
+  
+  .button_restart {
+    background-color: #0197f6;
+  }
+  
+  .button_restart:hover {
+    background-color: #0090e9;
+  }
+  
+  .container__grid {
+    display: flex;
+    flex-wrap: wrap;
+    border: 0.5px solid rgb(19, 24, 77);
+    box-shadow: 0 0 8px rgba(21, 1, 1, 0.5);
+  }
+  
+  .square {
+    width: calc(100% / 10);
+    aspect-ratio: 1 / 1;
+    border: 0.5px solid black;
+    background-color: #f7dce55e;
+  }
+  
+  .square:hover {
+    filter: brightness(80%); 
+    cursor: pointer;
+  }
+  
+  .square:focus {
+    background-color: rgb(213, 141, 217);
+  }
