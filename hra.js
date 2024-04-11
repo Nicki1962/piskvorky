@@ -74,7 +74,7 @@ const confirmAction = (message) => confirm(message);
 document
   .querySelector(".buttons__restart")
   .addEventListener("click", (event) => {
-    if (!confirmAction("Jste si jisti, že chcete restartovat hru?")) {
+    if (!confirmAction("Chceš restartovat hru?")) {
       event.preventDefault();
     }
   });
@@ -83,7 +83,7 @@ document
   .addEventListener("click", (event) => {
     if (
       !confirmAction(
-        "Opravdu chceš odejít?"
+        "Fakt už chceš jít?"
       )
     ) {
       event.preventDefault();
