@@ -1,73 +1,54 @@
-const player = document.getElementById('defaultPlayer');
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
 
 let currentPlayer = 'circle';
 
-const addCross = (event) => {
-  event.target.classList.add('cell__icon--cross');
+const selectPole = (event) => {
   event.target.disabled = true;
-};
-
-const addCircle = (event) => {
-  event.target.classList.add('cell__icon--circle');
-  event.target.disabled = true;
-};
-
-const handleClick = (event) => {
   if (currentPlayer === 'circle') {
-    addCircle(event);
+    event.target.classList.add('board__field--circle');
     currentPlayer = 'cross';
-    player.src = 'imgs/cross.svg';
-    player.alt = 'cross';
+    document.querySelector('.circle').src = 'imgs/cross.svg';
   } else {
-    addCross(event);
+    event.target.classList.add('board__field--cross');
     currentPlayer = 'circle';
-    player.src = 'imgs/circle.svg';
-    player.alt = 'circle';
+    document.querySelector('.circle').src = 'imgs/circle.svg';
+  }
+
+  const gameField = Array.from(document.querySelectorAll('.square')).map(
+    (htmlButton) => {
+      if (htmlButton.classList.contains('board__field--cross')) {
+        return `x`;
+      } else if (htmlButton.classList.contains('board__field--circle')) {
+        return `o`;
+      } else {
+        return `_`;
+      }
+    },
+  );
+
+  const winner = findWinner(gameField);
+  if (winner === 'o') {
+    setTimeout(() => {
+      alert(`Vyhrál hráč se symbolem ${winner}.`);
+      location.reload();
+    }, 1000);
+  } else if (winner === 'x') {
+    setTimeout(() => {
+      alert(`Vyhrál hráč se symbolem ${winner}.`);
+      location.reload();
+    }, 1000);
+  } else if (winner === 'tie') {
+    setTimeout(() => {
+      alert('Prohra na obou frontách :( Zahrajte si znovu!');
+      location.reload();
+    }, 1000);
   }
 };
 
-// assigning eventListener to buttons in the 1st row
-
-document
-  .querySelector('button:nth-child(1)')
-  .addEventListener('click', handleClick);
-
-document
-  .querySelector('button:nth-child(2)')
-  .addEventListener('click', handleClick);
-
-document
-  .querySelector('button:nth-child(3)')
-  .addEventListener('click', handleClick);
-
-document
-  .querySelector('button:nth-child(4)')
-  .addEventListener('click', handleClick);
-
-document
-  .querySelector('button:nth-child(5)')
-  .addEventListener('click', handleClick);
-
-document
-  .querySelector('button:nth-child(6)')
-  .addEventListener('click', handleClick);
-
-document
-  .querySelector('button:nth-child(7)')
-  .addEventListener('click', handleClick);
-
-document
-  .querySelector('button:nth-child(8)')
-  .addEventListener('click', handleClick);
-
-document
-  .querySelector('button:nth-child(9)')
-  .addEventListener('click', handleClick);
-
-document
-  .querySelector('button:nth-child(10)')
-  .addEventListener('click', handleClick);
-
+const allButtonsSelection = document.querySelectorAll('.square');
+allButtonsSelection.forEach((button) => {
+  button.addEventListener('click', selectPole);
+});
 
 const confirmAction = (message) => confirm(message);
 

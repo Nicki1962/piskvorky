@@ -111,11 +111,11 @@ body {
     background-color: rgb(213, 141, 217);
   }
 
-  .cell__icon--circle {
+  .board__field--circle {
     position: relative;
   }
   
-  .cell__icon--circle::after {
+  .board__field--circle::after {
     content: '';
     position: absolute;
     top: 0;
@@ -129,11 +129,11 @@ body {
     filter: invert(100%);
     animation: enlarge 0.15s linear;
   }
-  .cell__icon--cross {
+  .board__field--cross {
     position: relative;
   }
   
-  .cell__icon--cross::after {
+  .board__field--cross::after {
     content: '';
     position: absolute;
     top: 0;
